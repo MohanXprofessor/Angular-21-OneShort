@@ -1,0 +1,21 @@
+<input type="text" (keyup)="field()" placeholder="Enter Name" />
+
+<input type="text" (keyup)="updateField($event)" placeholder="keyUp" />
+
+<br />
+<input type="text" placeholder="Search..." (keyup)="onSearch($event)" />
+<br />
+<span>Hi,{{ value }}</span>
+
+<h1>Password Checker</h1>
+<input
+  class="border w-sm p-2 rounded-2xl ml-2"
+  type="password"
+  placeholder="Password..."
+  (keyup)="onPass($event)"
+/>
+@if(id=='green') {
+<span id="green" class="text-green-500 text-sm font-bold"> ✔ password Strong</span>
+} @else if(id=='red') {
+<span id="red" class="text-red-500 font-bold"> ❌ weak password</span>
+}

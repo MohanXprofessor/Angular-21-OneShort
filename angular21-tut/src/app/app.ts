@@ -1,9 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { EventB } from './event-b/event-b';
+import { Counter } from './counter/counter';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, EventB, Counter],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

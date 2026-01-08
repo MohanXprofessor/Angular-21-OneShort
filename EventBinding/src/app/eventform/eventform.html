@@ -1,0 +1,31 @@
+<form class="space-y-3 max-w-sm">
+  <input type="text" placeholder="ID" class="border p-2 w-full" />
+
+  <input type="text" placeholder="Name" class="border p-2 w-full" />
+
+  <input
+    type="password"
+    placeholder="Password"
+    class="border p-2 w-full"
+    (keyup)="checkPassword($event)"
+  />
+
+  @if (passwordTouched) {
+  <span [class.text-green-500]="isStrong" [class.text-red-500]="!isStrong" class="font-bold">
+    {{ isStrong ? 'Password is strong' : 'Password is weak' }}
+  </span>
+  }
+
+  <input
+    type="password"
+    placeholder="Confirm Password"
+    class="border p-2 w-full"
+    (keyup)="checkConfirmPassword($event)"
+  />
+
+  @if (confirmTouched) {
+  <span [class.text-green-500]="isMatch" [class.text-red-500]="!isMatch" class="font-bold">
+    {{ isMatch ? 'Passwords match' : 'Passwords do not match' }}
+  </span>
+  }
+</form>
