@@ -1,0 +1,7 @@
+<h1 class="text-2xl">{{ title }}</h1>
+
+<button class="border p-2 rounded ml-3" disabled="{{ btnDisable }}" (click)="open()">edit</button>
+<button class="border p-2 rounded ml-3" [disabled]="btnDisable" (click)="open()">Disable</button>
+<button class="border p-2 rounded ml-3" [disabled]="!btnDisable" (click)="open()">Disable</button>
+
+<button (click)="change()">toggle</button>

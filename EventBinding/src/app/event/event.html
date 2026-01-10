@@ -1,0 +1,28 @@
+<p>event works!</p>
+
+<input
+  class="border p-3 m-2 rounded-2xl"
+  type="text"
+  (click)="handelEvent($event.type)"
+  placeholder="Click Me!"
+/>
+
+<br />
+<input
+  class="border p-3 m-2 rounded-2xl"
+  type="text"
+  (input)="handelEvent($event.type)"
+  placeholder="Click Me!"
+/>
+<span
+  >Event Name is : <b>{{ str }}</b> Event Call</span
+>
+
+<br />
+<br />
+
+<select class="border" name="" id="" (change)="handelEvent($event.type)">
+  <option value="">Bike</option>
+  <option value="">Car</option>
+  <option value="">Truck</option>
+</select>
