@@ -1,0 +1,10 @@
+<h1>Computed Signal</h1>
+<p class="text-2xl">height: {{ height() }}</p>
+<p class="text-2xl">width: {{ width() }}</p>
+<p class="text-2xl">Area: {{ area() }}</p>
+<br />
+<button (click)="increaseheight()" class="text-xl rounded-full border p-2 m-2">
+  Update Height
+</button>
+<button (click)="increasewidth()" class="text-xl rounded-full border p-2 m-2">Update weight</button>
+<button (click)="reset()" class="text-sm rounded-full border p-2 m-2">Default</button>

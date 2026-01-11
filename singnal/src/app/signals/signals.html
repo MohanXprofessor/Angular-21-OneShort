@@ -1,0 +1,12 @@
+<h1 class="text-2xl">signals works!</h1>
+
+<p class="text-2xl">Without Signal Count</p>
+<p>Data: {{ data }}</p>
+<button class="border p-2 ml-5" (click)="updateData()">Update Data</button>
+<br />
+<p class="text-2xl">with Signal Count</p>
+<p>After Count reach 5 Automatically reset to 0</p>
+<p>Count: {{ count() }}</p>
+<button class="border p-2 ml-5" (click)="increment()">Update Data</button>
+
+<!-- // Computed Signal Example -->
