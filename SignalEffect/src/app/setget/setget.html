@@ -1,0 +1,5 @@
+<p>setget works!</p>
+
+<p>Value: {{ name() }}</p>
+<input class="border" [value]="name()" (input)="setValue($event.target.value)" type="text" />
+<button class="border p-2 m-2 rounded-full" (click)="default()">Default Value</button>

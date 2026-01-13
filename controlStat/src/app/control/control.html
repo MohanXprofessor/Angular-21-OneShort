@@ -1,0 +1,22 @@
+<p class="text-2xl">control Flow!</p>
+
+<!-- <p class="text-2xl" [style.color]="color">{{ status() }}</p> -->
+
+@if (status() === 'In Progress') {
+<span class="text-orange-600">{{ status() }}</span>
+} @else if (status() === 'Success') {
+<span class="text-green-600">{{ status() }}</span>
+} @else if (status() === 'Pending') {
+<span class="text-yellow-600">{{ status() }}</span>
+} @else if (status() === 'Error') {
+<span class="text-red-600">{{ status() }}</span>
+}
+<br />
+<select (change)="handlestatus($event)" class="border p-2 m-5 rounded-full" name="" id="">
+  <option value="In Progress">In Progress</option>
+  <option value="Success">Success</option>
+  <option value="Pending">Pending</option>
+  <option value="Error">Error</option>
+</select>
+
+<br /><br />
