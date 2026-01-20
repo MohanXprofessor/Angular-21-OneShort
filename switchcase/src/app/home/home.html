@@ -1,0 +1,22 @@
+<p class="text-2xl">Switch Case</p>
+
+<select class="border text-xl p-2 rounded-2xl" name="" (change)="handelswitch($event)" id="">
+  <option value="online">online</option>
+  <option value="offline">offline</option>
+  <option value="error">error</option>
+</select>
+
+<br />
+<p class="text-lg mt-4">Current Status: {{ status() }}</p>
+
+@switch (status()) {
+  @case ('online') {
+    <p class="text-green-500">You are online!</p>
+  }
+  @case ('offline') {
+    <p class="text-red-500">You are offline!</p>
+  }
+  @default {
+    <p class="text-yellow-500">Status unknown.</p>
+  }
+}

@@ -1,0 +1,48 @@
+<p>forloop works!</p>
+
+@for (user of users(); track user) {
+  <li>{{ user }}</li>
+}
+
+<p class="text-2xl">User Details</p>
+<br />
+<span>
+  <b> {{ $count }} Users Found </b>
+</span>
+<div class="overflow-x-auto">
+  <table class="min-w-2xl border border-gray-200 hidden md:table">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="px-2 py-2 text-left">Sr.No</th>
+        <th class="px-2 py-2 text-left">Name</th>
+        <th class="px-2 py-2 text-left">Age</th>
+        <th class="px-2 py-2 text-left">E-mail</th>
+        <th class="px-2 py-2 text-left">Roles</th>
+      </tr>
+    </thead>
+    @for (user of userDetails(); track user.id) {
+      <tbody>
+        <tr class="border-t">
+          <td class="px-2 py-2">{{ $index + 1 }}</td>
+          <td class="px-2 py-2">{{ user.name }}</td>
+          <td class="px-2 py-2">{{ user.age }}</td>
+          <td class="px-2 py-2">{{ user.email }}</td>
+          @if ($first) {
+            <tr>
+              <td colspan="3" class="px-2 py-2 text-center text-sm text-green-500">Admin</td>
+            </tr>
+          }
+          @if ($last) {
+            <tr>
+              <td colspan="3" class="px-2 py-2 text-center text-sm text-orange-500">Guest</td>
+            </tr>
+          } @else if (!$first && !$last) {
+            <tr>
+              <td colspan="3" class="px-2 py-2 text-center text-sm text-gray-500">User</td>
+            </tr>
+          }
+        </tr>
+      </tbody>
+    }
+  </table>
+</div>
