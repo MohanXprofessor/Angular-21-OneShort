@@ -1,0 +1,30 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+    align-items: center;
+    
+    margin: 5px;
+}
+ul{
+    width: 700px;
+}
+
+.delete{
+   
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-bottom: 2px solid darkred;
+}
+.add{
+   border-radius: 15px;
+    background-color: rgb(47, 91, 224);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-bottom: 2px solid rgb(90, 188, 230);
+}

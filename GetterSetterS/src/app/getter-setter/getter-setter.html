@@ -1,0 +1,34 @@
+<p class="text-2xl">getter-setter works!</p>
+
+<p>Value: {{ Name }}</p>
+
+<input class="border p-2 center border-blue-600" type="text" [(ngModel)]="Name" />
+
+<hr />
+
+<p class="text-2xl">Signal with Object Getter And Setter</p>
+<div class="flex gap-4">
+  <p>Value: {{ studentName }}</p>
+
+  <input
+    class="border rounded-2xl text-center p-2 center border-blue-600"
+    type="text"
+    [(ngModel)]="studentName"
+  />
+
+  <p>Value: {{ studentlastName }}</p>
+
+  <input
+    class="border rounded-2xl text-center p-2 center border-blue-600"
+    type="text"
+    [(ngModel)]="studentlastName"
+  />
+
+  <p>Value: {{ studentEmail }}</p>
+
+  <input
+    class="border rounded-2xl text-center p-2 center border-blue-600"
+    type="text"
+    [(ngModel)]="studentEmail"
+  />
+</div>

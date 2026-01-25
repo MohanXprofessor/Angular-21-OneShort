@@ -3,11 +3,11 @@
   "version": 1,
   "cli": {
     "packageManager": "npm",
-    "analytics": "debef455-ee26-480e-98b5-53a3b21851f1"
+    "analytics": false
   },
   "newProjectRoot": "projects",
   "projects": {
-    "twowaydatabinding": {
+    "ToDoList": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "twowaydatabinding:build:production"
+              "buildTarget": "ToDoList:build:production"
             },
             "development": {
-              "buildTarget": "twowaydatabinding:build:development"
+              "buildTarget": "ToDoList:build:development"
             }
           },
           "defaultConfiguration": "development"
