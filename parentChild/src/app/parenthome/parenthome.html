@@ -1,0 +1,16 @@
+<p>parenthome works!</p>
+<input
+  class="border p-2"
+  type="text"
+  (input)="newUser.set($event.target.value)"
+  placeholder="Enter student name"
+/>
+<span
+  ><button class="bg-blue-500 text-sm text-white p-3 rounded-2xl" (click)="addnewUser()">
+    Add New User
+  </button></span
+>
+
+<app-child [parentData]="users()" [studentData]="studentData()"></app-child>
+
+<!-- {{ users() }} -->
