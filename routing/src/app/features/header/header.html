@@ -1,0 +1,50 @@
+<nav class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <a routerLink="/" class="text-xl font-bold text-blue-600">
+        MyApp
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6">
+        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a routerLinkActive="active" routerLink="/about" class="text-gray-700 hover:text-blue-600">About</a>
+        <a routerLinkActive="active" routerLink="/services" class="text-gray-700 hover:text-blue-600">Services</a>
+        <a routerLinkActive="active" routerLink="/contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </div>
+
+      <!-- Login Button -->
+      <div class="hidden md:block">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          Login
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="md:hidden text-2xl"
+        (click)="toggleMenu()">
+        ☰
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+   @if(isMenuOpen){
+
+<div  class="md:hidden text-center bg-white px-4 pb-4 space-y-2">
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/" class="block text-gray-700 hover:text-red-600">Home</a>
+    <a routerLinkActive="active" routerLink="/about" class="block text-gray-700 hover:text-red-600">About</a>
+    <a routerLinkActive="active" routerLink="/services" class="block text-gray-700 hover:text-red-600">Services</a>
+    <a routerLinkActive="active" routerLink="/contact" class="block text-gray-700 hover:text-red-600">Contact</a>
+
+    <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+      Login
+    </button>
+  </div>
+   }
+  
+</nav>
