@@ -1,0 +1,49 @@
+<nav class="bg-gray-900 text-white px-6 py-4 flex items-center justify-between">
+  <!-- Logo -->
+  <div class="text-xl font-bold">
+    MyApp
+  </div>
+
+  <!-- Desktop Menu -->
+  <ul class="hidden md:flex gap-6">
+    <li>
+      <a
+        routerLink="/"
+        routerLinkActive="text-blue-400"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-blue-300"
+      >
+        Home
+      </a>
+    </li>
+
+    <li>
+      <a
+        routerLink="/user"
+        routerLinkActive="text-blue-400"
+        class="hover:text-blue-300"
+      >
+        User
+      </a>
+    </li>
+
+
+  </ul>
+
+  <!-- Mobile Button -->
+  <button
+    class="md:hidden text-2xl"
+    (click)="toggleMenu()"
+  >
+    ☰
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+@if (isMenuOpen) {
+  <div class="md:hidden bg-gray-800 px-6 py-4 space-y-4">
+    <a routerLink="/" (click)="closeMenu()" class="block hover:text-blue-300">Home</a>
+    <a routerLink="/user" (click)="closeMenu()" class="block hover:text-blue-300">User</a>
+
+  </div>
+}
