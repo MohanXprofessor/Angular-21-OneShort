@@ -1,0 +1,20 @@
+<!-- user-list.component.html -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+
+  @for (user of users(); track user.id) {
+    <div
+      class="bg-white shadow-lg rounded-xl p-5 border hover:shadow-xl transition">
+
+      <h2 class="text-xl font-semibold text-gray-800">
+        {{ user.name }}
+      </h2>
+
+      <p class="text-gray-600">Age: {{ user.age }}</p>
+      <p class="text-gray-500 text-sm">{{ user.email }}</p>
+
+      <a class="text-blue-400 float-end" routerLink="/user">Back</a>
+
+    </div>
+  }
+
+</div>

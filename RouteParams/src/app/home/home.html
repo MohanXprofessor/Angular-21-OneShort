@@ -1,0 +1,13 @@
+<p class="text-xl">home works!</p>
+<div class="text-xl">routing param with signal dynamic value</div>
+<button routerLink="/about/{{userData().name}}/{{userData().age}}" class="border p-2">
+    go to About
+</button>
+
+
+<hr>
+<br>
+<div class="text-xl">routing param with array</div>
+<button [routerLink]="['about',name()]" class="border p-2">
+    go to About
+</button>

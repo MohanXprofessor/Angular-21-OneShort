@@ -1,0 +1,45 @@
+<nav class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <div class="text-xl font-bold">
+        MyApp
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8">
+        <a routerLink="/" class="hover:text-blue-400 transition">Home</a>
+        <a routerLink="/about" class="hover:text-blue-400 transition">About</a>
+       
+        <a routerLink="/contact" class="hover:text-blue-400 transition">Contact</a>
+      </div>
+
+      <!-- Desktop Button -->
+      <div class="hidden md:block">
+        <button
+          class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg transition">
+          Login
+        </button>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button
+        class="md:hidden text-2xl"
+        (click)="toggleMenu()">
+        ☰
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (isOpen) {
+    <div class="md:hidden bg-gray-800">
+      <a routerLink="/" class="block px-4 py-2 hover:bg-gray-700">Home</a>
+      <a routerLink="/about" class="block px-4 py-2 hover:bg-gray-700">About</a>
+    
+      <a routerLink="/contact" class="block px-4 py-2 hover:bg-gray-700">Contact</a>
+    </div>
+  }
+</nav>
