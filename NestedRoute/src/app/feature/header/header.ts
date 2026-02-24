@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { SubHeader } from '../sub-header/sub-header';
 
 @Component({
   selector: 'app-header',
@@ -16,5 +17,13 @@ export class Header {
 
   closeMenu() {
     this.isMenuOpen = false;
+  }
+
+
+  /* */
+   constructor(private router: Router) {}
+
+  showSubNav() {
+    return this.router.url.startsWith('/user');
   }
 }

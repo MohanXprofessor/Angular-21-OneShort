@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Header } from "../../feature/header/header";
 
 @Component({
   selector: 'app-home',
