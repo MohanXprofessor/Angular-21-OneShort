@@ -8,6 +8,11 @@ export const routes: Routes = [
 
 
 
+<<<<<<< HEAD
 {path:'admin', loadComponent:()=>import('./pages/admin/admin').then((c)=>c.Admin)}
+=======
+{path:'admin', loadComponent:()=>import('./pages/admin/admin').then((c)=>c.Admin)},
+{path:'user', loadComponent:()=>import('./pages/user/user').then((c)=>c.User)}
+>>>>>>> 06b36e69e09bc21d2de114db4e084449adf923fd
 
 ];
