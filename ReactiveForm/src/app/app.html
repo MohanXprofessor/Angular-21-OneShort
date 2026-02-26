@@ -1,0 +1,59 @@
+<h1 class="text-2xl font-semibold text-gray-800 mb-6">
+  Reactive Forms
+</h1>
+
+<div class="max-w-xl m-auto items-center justify-center  bg-white border border-gray-200 p-6 rounded-2xl shadow-md space-y-4">
+
+  <!-- Email -->
+  <div class="flex flex-col gap-1">
+    <label for="email" class="text-sm font-medium text-gray-700">
+      Email ID
+    </label>
+    <input
+      id="email"
+      type="email"
+      [formControl]="email"
+      placeholder="abc@test.com"
+      class="px-4 py-2 border border-gray-300 rounded-lg
+             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    />
+  </div>
+
+  <!-- Password (assuming second field) -->
+  <div class="flex flex-col gap-1">
+    <label for="password" class="text-sm font-medium text-gray-700">
+      Password
+    </label>
+    <input
+      id="password"
+      type="password"
+      [formControl]="password"
+      placeholder="••••••••"
+      class="px-4 py-2 border border-gray-300 rounded-lg
+             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    />
+  </div>
+
+  <!-- Button -->
+  <button
+  (click)="login()"
+    type="submit"
+    class="w-full bg-blue-600 text-white py-2 rounded-lg
+           hover:bg-blue-700 transition duration-200
+           focus:outline-none focus:ring-2 focus:ring-blue-400"
+  >
+    Login
+  </button>
+  <button
+  (click)="reset()"
+    type="submit"
+    class="w-full bg-red-600 text-white py-2 rounded-lg
+           hover:bg-red-700 transition duration-200
+           focus:outline-none focus:ring-2 focus:ring-red-400"
+  >
+    Reset
+  </button>
+
+</div>
+<p>{{email.value}}</p>
+<p>{{password.value}}</p>
