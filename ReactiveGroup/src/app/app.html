@@ -1,0 +1,128 @@
+<h1 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
+  Reactive FormGroup
+</h1>
+
+<!-- Live Form Values -->
+<div
+  class="max-w-md mx-auto mb-6 bg-gray-50 p-4 rounded-xl text-sm text-gray-700 space-y-1 border"
+>
+  <p><strong>Name:</strong> {{ loginForm.value.name }}</p>
+  <p><strong>Email:</strong> {{ loginForm.value.email }}</p>
+  <p><strong>Password:</strong> {{ loginForm.value.password }}</p>
+</div>
+
+<form
+  [formGroup]="loginForm"
+  (ngSubmit)="handleLogin()"
+  class="max-w-md mx-auto bg-white border border-gray-200 p-6 rounded-2xl shadow-lg space-y-6"
+>
+
+  <!-- Name -->
+  <div class="flex flex-col gap-1">
+    <label class="text-sm font-medium text-gray-700">Name</label>
+
+    <input
+      type="text"
+      formControlName="name"
+      placeholder="Enter your name"
+      class="px-4 py-2 rounded-lg border transition
+             focus:outline-none focus:ring-2
+             focus:ring-indigo-500 focus:border-indigo-500
+             "
+    />
+
+ @if (loginForm.get('name')?.touched && loginForm.get('name')?.invalid) {
+  <p class="text-red-600 text-sm">
+    @if (loginForm.get('name')?.errors?.['required']) {
+      Name is required.
+    }
+    @if (loginForm.get('name')?.errors?.['minlength']) {
+      Name must be at least 3 characters.
+    }
+    @if (loginForm.get('name')?.errors?.['maxlength']) {
+      Name cannot exceed 30 characters.
+    }
+  </p>
+}
+  </div>
+
+  <!-- Email -->
+  <div class="flex flex-col gap-1">
+    <label class="text-sm font-medium text-gray-700">Email</label>
+
+    <input
+      type="email"
+      formControlName="email"
+      placeholder="Enter your email"
+      class="px-4 py-2 rounded-lg border transition
+             focus:outline-none focus:ring-2
+             focus:ring-indigo-500 focus:border-indigo-500
+             @if(loginForm.get('email')?.touched && loginForm.get('email')?.invalid){
+               border-red-500 focus:ring-red-400
+             }"
+    />
+
+    @if (loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']) {
+      <p class="text-red-600 text-sm">
+        Email is required
+      </p>
+    }
+
+    @if (loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']) {
+      <p class="text-red-600 text-sm">
+        Enter a valid email address
+      </p>
+    }
+  </div>
+
+  <!-- Password -->
+  <div class="flex flex-col gap-1">
+    <label class="text-sm font-medium text-gray-700">Password</label>
+
+    <input
+      type="password"
+      formControlName="password"
+      placeholder="Enter your password"
+      class="px-4 py-2 rounded-lg border transition
+             focus:outline-none focus:ring-2
+             focus:ring-indigo-500 focus:border-indigo-500
+             @if(loginForm.get('password')?.touched && loginForm.get('password')?.invalid){
+               border-red-500 focus:ring-red-400
+             }"
+    />
+
+    @if (loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']) {
+      <p class="text-red-600 text-sm">
+        Password is required
+      </p>
+    }
+
+    @if (loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['minlength']) {
+      <p class="text-red-600 text-sm">
+        Password must be at least 8 characters
+      </p>
+    }
+  </div>
+
+  <!-- Buttons -->
+  <div class="flex gap-3 pt-2">
+    <button
+      type="submit"
+      [disabled]="loginForm.invalid"
+      class="flex-1 bg-indigo-600 text-white py-2 rounded-lg font-medium
+             hover:bg-indigo-700 transition
+             disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      Submit
+    </button>
+
+    <button
+      type="button"
+      (click)="reset()"
+      class="flex-1 border border-gray-300 text-gray-700 py-2 rounded-lg font-medium
+             hover:bg-gray-100 transition"
+    >
+      Reset
+    </button>
+  </div>
+</form>
