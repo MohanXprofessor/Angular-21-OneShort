@@ -1,0 +1,60 @@
+<!-- Page Wrapper -->
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+  <!-- Header -->
+  <p class="mb-6 text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800">
+    Angular 21
+  </p>
+
+  <!-- Get User Button -->
+  <button
+    (click)="getUser()"
+    class="mb-8 inline-flex w-full sm:w-auto items-center justify-center gap-2
+           rounded-xl bg-blue-600 px-6 py-3
+           text-white font-medium shadow-md transition
+           hover:bg-blue-700 active:scale-95
+           focus:outline-none focus:ring-2 focus:ring-blue-400"
+  >
+    Get User
+  </button>
+
+  <!-- User List -->
+  <div
+    class="grid gap-4
+           grid-cols-1
+           sm:grid-cols-2
+           lg:grid-cols-3"
+  >
+    @if (userDetail?.length > 0) {
+      @for (user of userDetail; track user.id) {
+
+        <!-- User Card -->
+        <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+          <div class="space-y-1 text-sm">
+            <p class="text-gray-800">
+              <span class="font-medium">Id:</span> {{ user.id }}
+            </p>
+            <p class="text-gray-700">
+              <span class="font-medium">Name:</span> {{ user.name }}
+            </p>
+            <p class="text-gray-700">
+              <span class="font-medium">Age:</span> {{ user.age }}
+            </p>
+            <p class="text-gray-700">
+              <span class="font-medium">Salary:</span> {{ user.salary }}
+            </p>
+          </div>
+        </div>
+
+      }
+    } @else {
+      <div
+        class="col-span-full rounded-xl border border-dashed border-gray-300
+               py-10 text-center text-sm text-gray-500"
+      >
+        No users found
+      </div>
+    }
+  </div>
+
+</div>
